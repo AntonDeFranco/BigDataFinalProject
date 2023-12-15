@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project establishes a real-time data pipeline to fetch weather data from OpenWeatherMap, stream it through Google Cloud Pub/Sub, store it in Google BigQuery, and visualize it using Looker Studio. It leverages various Google Cloud Platform (GCP) services to create a comprehensive solution for weather data analysis.
+This project establishes a real-time data pipeline to fetch weather data from OpenWeatherMap, stream it through Google Cloud Pub/Sub, store it in Google BigQuery, and visualize it using Tableau. It leverages various Google Cloud Platform (GCP) services to create a comprehensive solution for weather data analysis.
 
 ## Components
 
@@ -11,7 +11,6 @@ This project establishes a real-time data pipeline to fetch weather data from Op
 - **Google Cloud Pub/Sub**: Messaging service for weather data.
 - **Google Cloud Dataflow**: Streams data from Pub/Sub to BigQuery.
 - **Google BigQuery**: Data warehouse for storing weather data.
-- **Looker Studio**: Tool for visualizing data from BigQuery.
 
 ## Setup and Configuration
 
@@ -56,18 +55,12 @@ sea_level: INTEGER,
 grnd_level: INTEGER,
 sunrise: TIMESTAMP,
 sunset: TIMESTAMP
-
-
-### 6. Looker Studio
-- Connect to BigQuery dataset.
-- Create and view reports for data analysis.
-
 ## Usage Instructions
 
 1. Deploy the Cloud Function with appropriate environment variables.
 2. Ensure Dataflow job is active for data streaming to BigQuery.
 3. Trigger Cloud Function for regular data publishing.
-4. Utilize Looker Studio for data visualization and reporting.
+4. Utilize Tableau for data visualization and reporting.
 
 ## Monitoring and Maintenance
 
