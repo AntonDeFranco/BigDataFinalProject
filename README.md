@@ -67,4 +67,3 @@ sunset: TIMESTAMP
 - Monitor Cloud Function and Dataflow job for operational issues.
 - Verify data integrity and completeness in BigQuery.
 - Update Cloud Function for any changes in API response format.
-
