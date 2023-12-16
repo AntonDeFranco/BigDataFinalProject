@@ -1,0 +1,2 @@
+timestamp,longitude,latitude,temperature,apparent_temperature,pressure,humidity,rain,snow,clouds,wind_speed,wind_deg,wind_gust
+2023-12-16 17:31:03-06:00,-87.6298,41.8781,278.78,277.47,1017,91,1.08,0.0,100,1.79,193,2.24
