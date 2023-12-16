@@ -1,5 +1,5 @@
 -- Retrieve Recent Weather Data
-SELECT 
+SELECT
   timestamp,
   temperature,
   humidity,
@@ -7,83 +7,83 @@ SELECT
   wind_speed,
   weather_main,
   weather_description
-FROM 
+FROM
   `WeatherData.from-pubsub'
-ORDER BY 
+ORDER BY
   timestamp DESC
 LIMIT 10;
 
 -- Average Temperature and Humidity per Day
-SELECT 
+SELECT
   DATE(timestamp) as date,
   AVG(temperature) as avg_temperature,
   AVG(humidity) as avg_humidity
-FROM 
+FROM
   `WeatherData.from-pubsub'
-GROUP BY 
+GROUP BY
   date
-ORDER BY 
+ORDER BY
   date DESC;
 
 -- Maximum and Minimum Temperatures
-SELECT 
+SELECT
   MAX(temperature) as max_temperature,
   MIN(temperature) as min_temperature
-FROM 
+FROM
     `WeatherData.from-pubsub';
 
 -- Wind Speed Analysis
-SELECT 
+SELECT
   wind_speed,
   COUNT(*) as frequency
-FROM 
+FROM
   `WeatherData.from-pubsub'
-GROUP BY 
+GROUP BY
   wind_speed
-ORDER BY 
+ORDER BY
   frequency DESC;
 
 -- Weather Condition Frequency
-SELECT 
+SELECT
   weather_main,
   COUNT(*) as count
-FROM 
+FROM
   `WeatherData.from-pubsub'
-GROUP BY 
+GROUP BY
   weather_main
-ORDER BY 
+ORDER BY
   count DESC;
 
 -- Visibility Statistics
-SELECT 
+SELECT
   DATE(timestamp) as date,
   AVG(visibility) as avg_visibility
-FROM 
+FROM
  `WeatherData.from-pubsub'
-GROUP BY 
+GROUP BY
   date
-ORDER BY 
+ORDER BY
   date;
 
 -- Weather Change Over Time
-SELECT 
+SELECT
   DATE(timestamp) as date,
   AVG(temperature) as avg_temperature,
   AVG(humidity) as avg_humidity
-FROM 
+FROM
   `WeatherData.from-pubsub'
-WHERE 
+WHERE
   timestamp BETWEEN '2023-01-01' AND '2023-01-31'
-GROUP BY 
+GROUP BY
   date
-ORDER BY 
+ORDER BY
   date;
 
 -- Correlation Between Temperature and Humidity
-SELECT 
+SELECT
   temperature,
   humidity
-FROM 
+FROM
   `WeatherData.from-pubsub'
-WHERE 
+WHERE
   DATE(timestamp) = '2023-01-01';
